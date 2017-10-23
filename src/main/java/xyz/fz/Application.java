@@ -10,8 +10,9 @@ public class Application {
     public static void main(String[] args) throws InterruptedException {
         ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
         AbcService abcService = (AbcService) context.getBean("abcService");
-        System.out.println(abcService.demoService.sayHello("abc"));
-        Thread.sleep(1000L);
-        System.out.println(abcService.demoService.sayTxHello(System.currentTimeMillis() + ""));
+        for (int i = 0; i < 9999999; i++) {
+            System.out.println(abcService.demoService.sayHello("abc"));
+            Thread.sleep(10L);
+        }
     }
 }
