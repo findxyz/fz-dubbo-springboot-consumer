@@ -11,7 +11,7 @@ public class Application {
         ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
         AbcService abcService = (AbcService) context.getBean("abcService");
         for (int i = 0; i < 9999999; i++) {
-            System.out.println(abcService.demoService.sayHello("abc"));
+            System.out.println(abcService.demoService.sayHello("abc" + i));
             Thread.sleep(10L);
         }
     }
